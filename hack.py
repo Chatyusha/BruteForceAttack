@@ -1,7 +1,7 @@
 import subprocess
 import itertools
 
-charAsset="abcdef#"
+charAsset="ab#"
 done={}
 passList=[]
 class Node(object):
@@ -28,5 +28,5 @@ def DFS(node: Node,dps):
 if __name__ == '__main__':
     node = Node()
     node.value = ''
-    DFS(node,6)
+    DFS(node,2)
     print(passList)
