@@ -24,4 +24,4 @@ if __name__ == '__main__':
     node.value = ''
     DFS(node,2)
     # パスワードはdoneのkeyに格納される
-    print(done.keys())
+    print([i for i in done.keys() if i != ""])
