@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 
-std::string CharAsset = "ab#";
+std::string CharAsset = "abcdefghijklmnopqrstuvwxyz#";
 std::map<std::string,int> done;
 std::vector<std::string> passList;
 
@@ -43,16 +43,18 @@ int main(int argc, char* argv[])
 {
 	Node node = Node();
 	node.value = "";
-	DFS(node,2);
+	DFS(node,4);
 
 	// パスワードはdoneのkeyに格納される
 	// 空文字のパスワードは考えないので消去
 	done.erase("");
+	int c=0;
 	auto begin = done.begin(), end = done.end();
 	for (auto iter = begin; iter != end; iter++) {
 			// first: key, second: value
-			std::cout << iter->first << ", ";
+//			std::cout << iter->first << ", ";
+			c++;
 	}
-	printf("\n");
+	printf("%d\n",c);
 	return 0;
 }
