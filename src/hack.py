@@ -1,9 +1,5 @@
-import subprocess
-import itertools
-
 charAsset="ab#"
 done={}
-passList=[]
 class Node(object):
     def __init__(self):
         self.value  = ''
@@ -11,9 +7,7 @@ class Node(object):
 def DFS(node: Node,dps):
     ## 探索済み
     done[node.value] = 1
-    if dps == 0:
-        passList.append(node.value)
-    else:
+    if dps != 0:
         for i in charAsset:
             newnode=Node()
             if i == '#':
@@ -29,4 +23,5 @@ if __name__ == '__main__':
     node = Node()
     node.value = ''
     DFS(node,2)
-    print(passList)
+    # パスワードはdoneのkeyに格納される
+    print(done.keys())
